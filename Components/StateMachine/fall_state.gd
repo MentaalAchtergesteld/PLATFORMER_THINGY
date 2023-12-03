@@ -14,8 +14,6 @@ var coyote_time = false;
 var jump_buffer = false;
 
 func enter(old_state: State) -> void:
-	print("ENTERED FALL STATE");
-	print(old_state);
 	if old_state.is_ground_state():
 		coyote_time = true;
 		get_tree().create_timer(0.05).connect("timeout", on_coyote_time_timeout);
@@ -28,7 +26,6 @@ func input(event: InputEvent) -> State:
 	
 	if Input.is_action_just_pressed("jump"):
 		if coyote_time:
-			print("COYOTE TIME!");
 			return JUMP_STATE;
 		
 		jump_buffer = true;
