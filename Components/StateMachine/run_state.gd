@@ -1,6 +1,11 @@
 extends MoveState
+class_name RunState
 
+@export var RUN_STATS: BasicHorizontalMovementStats;
 @export var WALK_STATE: State;
+
+func is_ground_state() -> bool:
+	return true;
 
 func input(event: InputEvent) -> State:
 	var new_state = super.input(event);

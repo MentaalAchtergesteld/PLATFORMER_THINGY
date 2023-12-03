@@ -1,7 +1,10 @@
 extends Node
 class_name State
 
-func enter() -> void:
+func is_ground_state() -> bool:
+	return false;
+
+func enter(old_state: State) -> void:
 	return;
 
 func exit() -> void:

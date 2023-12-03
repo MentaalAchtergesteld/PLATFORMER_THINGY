@@ -33,19 +33,19 @@ script = ExtResource("8_6vy7y")
 JUMP_HEIGHT = 60.0
 JUMP_TIME_TO_PEAK = 0.3
 JUMP_TIME_TO_DESCENT = 0.2
-VELOCITY_CHANGE_SPEED = 2.0
+VELOCITY_CHANGE_SPEED = 0.1
 
 [node name="WalkStats" type="Node" parent="Stats"]
 script = ExtResource("3_rsbxd")
-MAX_SPEED = 150.0
-ACCELERATION = 1000.0
-DECELERATION = 800.0
+MAX_SPEED = 10000.0
+ACCELERATION = 2000.0
+DECELERATION = 3000.0
 
 [node name="RunStats" type="Node" parent="Stats"]
 script = ExtResource("3_rsbxd")
-MAX_SPEED = 250.0
-ACCELERATION = 900.0
-DECELERATION = 700.0
+MAX_SPEED = 15000.0
+ACCELERATION = 1000.0
+DECELERATION = 3000.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("2_j8brh")
@@ -75,19 +75,17 @@ RUN_STATE = NodePath("../RunState")
 JUMP_STATE = NodePath("../JumpState")
 FALL_STATE = NodePath("../FallState")
 
-[node name="JumpState" parent="StateMachine" node_paths=PackedStringArray("CHARACTER_BODY", "JUMP_STATS", "MOVE_STATS", "IDLE_STATE", "FALL_STATE", "WALK_STATE", "RUN_STATE") instance=ExtResource("6_c3dgs")]
+[node name="JumpState" parent="StateMachine" node_paths=PackedStringArray("CHARACTER_BODY", "JUMP_STATS", "IDLE_STATE", "FALL_STATE", "WALK_STATE", "RUN_STATE") instance=ExtResource("6_c3dgs")]
 CHARACTER_BODY = NodePath("../..")
 JUMP_STATS = NodePath("../../Stats/JumpStats")
-MOVE_STATS = NodePath("../../Stats/WalkStats")
 IDLE_STATE = NodePath("../IdleState")
 FALL_STATE = NodePath("../FallState")
 WALK_STATE = NodePath("../WalkState")
 RUN_STATE = NodePath("../RunState")
 
-[node name="FallState" parent="StateMachine" node_paths=PackedStringArray("CHARACTER_BODY", "JUMP_STATS", "MOVE_STATS", "IDLE_STATE", "WALK_STATE", "RUN_STATE", "JUMP_STATE") instance=ExtResource("7_7bc2k")]
+[node name="FallState" parent="StateMachine" node_paths=PackedStringArray("CHARACTER_BODY", "JUMP_STATS", "IDLE_STATE", "WALK_STATE", "RUN_STATE", "JUMP_STATE") instance=ExtResource("7_7bc2k")]
 CHARACTER_BODY = NodePath("../..")
 JUMP_STATS = NodePath("../../Stats/JumpStats")
-MOVE_STATS = NodePath("../../Stats/WalkStats")
 IDLE_STATE = NodePath("../IdleState")
 WALK_STATE = NodePath("../WalkState")
 RUN_STATE = NodePath("../RunState")

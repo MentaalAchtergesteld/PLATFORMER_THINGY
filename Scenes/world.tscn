@@ -24,3 +24,42 @@ metadata/_edit_lock_ = true
 self_modulate = Color(1, 1, 0, 1)
 texture = SubResource("PlaceholderTexture2D_kksq2")
 metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(305, 162)
+scale = Vector2(0.163116, -0.199746)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_fmx01")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+self_modulate = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_kksq2")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(441, 116)
+scale = Vector2(0.163116, -0.199746)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_fmx01")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+self_modulate = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_kksq2")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(209, 64)
+scale = Vector2(0.163116, -0.199746)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_fmx01")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+self_modulate = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_kksq2")
+metadata/_edit_lock_ = true

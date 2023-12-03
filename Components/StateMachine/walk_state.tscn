@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clwex5bmr3xxf"]
 
-[ext_resource type="Script" path="res://Components/walk_state.gd" id="1_v25k7"]
+[ext_resource type="Script" path="res://Components/StateMachine/walk_state.gd" id="1_v25k7"]
 
 [node name="WalkState" type="Node"]
 script = ExtResource("1_v25k7")

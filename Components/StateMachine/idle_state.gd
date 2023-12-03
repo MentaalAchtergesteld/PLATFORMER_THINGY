@@ -7,7 +7,7 @@ extends State
 @export var JUMP_STATE: State;
 @export var FALL_STATE: State;
 
-func enter() -> void:
+func enter(old_state: State) -> void:
 	CHARACTER_BODY.velocity.x = 0;
 
 func input(event: InputEvent) -> State:

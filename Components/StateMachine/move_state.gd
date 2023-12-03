@@ -1,9 +1,7 @@
 extends State
 class_name MoveState
 
-@export var MOVE_SPEED: float = 4000;
-@export var ACCELERATION: float = 1000;
-@export var DECELERATION: float = 1000;
+@export var MOVE_STATS: BasicHorizontalMovementStats;
 @export var CHARACTER_BODY: CharacterBody2D;
 
 @export var JUMP_STATE: State;
@@ -26,12 +24,12 @@ func physics_process(delta: float) -> State:
 	var move_direction = get_movement_direction();
 	
 	if move_direction == 0:
-		CHARACTER_BODY.velocity.x = move_toward(CHARACTER_BODY.velocity.x, 0, DECELERATION*delta);
+		CHARACTER_BODY.velocity.x = move_toward(CHARACTER_BODY.velocity.x, 0, MOVE_STATS.DECELERATION*delta);
 	else:
 		CHARACTER_BODY.velocity.x = move_toward(
 			CHARACTER_BODY.velocity.x, 
-			MOVE_SPEED*move_direction*delta, 
-			ACCELERATION*delta);
+			MOVE_STATS.MAX_SPEED*move_direction, 
+			MOVE_STATS.ACCELERATION*delta);
 	
 	
 	CHARACTER_BODY.move_and_slide();

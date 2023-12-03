@@ -7,12 +7,13 @@ var current_state: State;
 
 func change_state(new_state: State) -> void:
 	current_state.exit();
+	var old_state = current_state;
 	current_state = new_state;
-	new_state.enter();
+	new_state.enter(old_state);
 
 func init():
 	current_state = default_state;
-	current_state.enter();
+	current_state.enter(default_state);
 
 func input(event: InputEvent):
 	var new_state = current_state.input(event);
